@@ -9,6 +9,8 @@
 (package-initialize)
 (setq-default tab-width 4)
 (setq tab-stop-list (number-sequence 4 120 4))
+(setq-default indent-tabs-mode nil)
+(global-set-key (kbd "TAB") 'self-insert-command)
 (global-linum-mode t)
 (delete-selection-mode 1)
 (menu-bar-mode -1)
