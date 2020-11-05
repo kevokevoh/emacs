@@ -69,12 +69,12 @@
               (set-visited-file-name new-name)
               (set-buffer-modified-p nil)
               (message "File '%s' successfully renamed to '%s'" name (file-name-nondirectory new-name))))))))(global-set-key (kbd "C-c r") 'rename-this-buffer-and-file)
-;; adjust indents for web-mode to 2 spaces
+;; adjust indents for web-mode to 4 spaces
 (defun my-web-mode-hook ()
   "Hooks for Web mode.  Adjust indent."
-  (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-css-indent-offset 2)
-  (setq web-mode-code-indent-offset 2))
+  (setq web-mode-markup-indent-offset 4)
+  (setq web-mode-css-indent-offset 4)
+  (setq web-mode-code-indent-offset 4))
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
