@@ -67,7 +67,6 @@
    (python . t)
    (ruby . t)
    (screen . nil)
-   (sh . t)
    (sql . nil)
    (sqlite . t)))
 ;; Rename files
