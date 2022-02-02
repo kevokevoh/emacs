@@ -52,6 +52,24 @@
 (global-set-key (kbd "C-x m") 'helm-M-x)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((R . t)
+   (ditaa . t)
+   (dot . t)
+   (emacs-lisp . t)
+   (gnuplot . t)
+   (haskell . nil)
+   (latex . t)
+   (ledger . t)
+   (ocaml . nil)
+   (octave . t)
+   (python . t)
+   (ruby . t)
+   (screen . nil)
+   (sh . t)
+   (sql . nil)
+   (sqlite . t)))
 ;; Rename files
 (defun rename-this-buffer-and-file ()
  "Renames current buffer and file it is visiting."
@@ -69,12 +87,12 @@
               (set-visited-file-name new-name)
               (set-buffer-modified-p nil)
               (message "File '%s' successfully renamed to '%s'" name (file-name-nondirectory new-name))))))))(global-set-key (kbd "C-c r") 'rename-this-buffer-and-file)
-;; adjust indents for web-mode to 4 spaces
+;; adjust indents for web-mode to 2 spaces
 (defun my-web-mode-hook ()
   "Hooks for Web mode.  Adjust indent."
-  (setq web-mode-markup-indent-offset 4)
-  (setq web-mode-css-indent-offset 4)
-  (setq web-mode-code-indent-offset 4))
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2))
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -83,9 +101,9 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(dracula))
  '(custom-safe-themes
-   '("24714e2cb4a9d6ec1335de295966906474fdb668429549416ed8636196cb1441" default))
+   '("427fed191e7a766152e59ef0e2904283f436dbbe259b9ccc04989f3acde50a55" "24714e2cb4a9d6ec1335de295966906474fdb668429549416ed8636196cb1441" default))
  '(package-selected-packages
-   '(helm flycheck ace-window web-mode smartparens auto-complete dracula-theme)))
+   '(ledger-mode yaml-mode helm flycheck ace-window web-mode smartparens auto-complete dracula-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
